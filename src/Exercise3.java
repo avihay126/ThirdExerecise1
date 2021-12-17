@@ -1,7 +1,7 @@
 public class Exercise3 {
     public static final int MAX_SIZE_ARRAY=50;
     public static void main(String[] args) {
-        factorization(1);
+        factorization(4560);
     }
     public static int [] factorization(int number){
         int factorizationArrayLength =0;

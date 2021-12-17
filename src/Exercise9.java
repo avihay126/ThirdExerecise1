@@ -82,15 +82,15 @@ public class Exercise9 {
     }
 
     public static void gameProgress(int[] secretCode) {
-        for (int a = 0; a < secretCode.length; a++) {
-            System.out.print(secretCode[a] + " ");
-        }
+//        for (int a = 0; a < secretCode.length; a++) {
+//            System.out.print(secretCode[a] + " ");
+//        }
         int choose = runOptions();
         int opportunity = sortRuns(choose);
         int[] guess;
         int countAccurateNumber = 0;
         int countPartialNumber = 0;
-        int c = 0;
+        int doubleNumber = 0;
         for (int i = opportunity; i > 0; i--) {
             if (choose != 4) {
                 System.out.println("you have " + i + " opportunity:");
@@ -99,13 +99,13 @@ public class Exercise9 {
             for (int j = 0; j < guess.length; j++) {
                 for (int a = j + 1; a < guess.length; a++) {
                     if (guess[j] == guess[a]) {
-                        c++;
+                        doubleNumber++;
                     }
                 }
-                if (c != 0) {
-                    System.out.println("fine! you lost 2 opportunity");
+                if (doubleNumber != 0) {
+                    System.out.println("fine! you lost 2 opportunity.");
                     i = i - 2;
-                    c = 0;
+                    doubleNumber = 0;
                     break;
                 }
                 if (guess[j] == secretCode[j]) {
@@ -123,11 +123,10 @@ public class Exercise9 {
                     System.out.print(secretCode[j] + " ");
                 }
             } else if (countAccurateNumber == 4) {
-                System.out.println("you win!");
+                System.out.println("Congratulations! you win!");
                 break;
             } else {
-                System.out.println("you have " + countAccurateNumber + " accurate numbers");
-                System.out.println("you have " + countPartialNumber + " partially accurate numbers");
+                System.out.println(countAccurateNumber + " accurate numbers");
                 countAccurateNumber = 0;
                 countPartialNumber = 0;
             }

@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 public class Exercise8 {
-    public static final int LAST_INDEX=0;
+    public static final int FIRST_INDEX =0;
     public static void main(String[] args) {
         allSubStrings("avihay");
-        thePopularSubString(stringSmallestThanFour(LAST_INDEX));
+        thePopularSubString(stringSmallestThanFour(FIRST_INDEX));
     }
     public static String[] stringSmallestThanFour(int i){
         Scanner scanner = new Scanner(System.in);
